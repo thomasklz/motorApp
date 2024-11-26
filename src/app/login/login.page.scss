@@ -9,13 +9,27 @@ ion-content {
 
   ion-item {
     --background: transparent;
+    margin-right: 10px;
   }
-
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .image-container img {
+    max-width: 200px; /* Ajusta el tamaño según sea necesario */
+    height: auto;
+  }
+  
   ion-label {
     font-size: 14px;
     color: #666;
   }
-
+  ion-button{
+    margin-right: 10px;
+    margin-left: 10px;
+  }
   .success-message {
     display: flex;
     align-items: center;
@@ -69,4 +83,11 @@ ion-content {
    
   ion-toolbar{
     --background: #E5F1EF;
+  }
+  .center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
   }

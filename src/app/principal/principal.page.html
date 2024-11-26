@@ -1,0 +1,97 @@
+<ion-header translucent="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Transport</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="transport-page">
+  <!-- Encabezado -->
+  <div class="header">
+    <div>
+      <h1>Transport</h1>
+      <p>Wherever you're going, let's get you there!</p>
+    </div>
+    <ion-button fill="clear" class="map-button">
+      <ion-icon slot="icon-only" name="map-outline"></ion-icon>
+      <a href=""  routerLink="/person" routerLinkActive="router-link-active"> <span>{{user}}</span> </a>
+    </ion-button>
+  </div>
+
+  <!-- Barra de búsqueda -->
+  <ion-card class="search-bar">
+    <ion-item lines="none">
+      <ion-icon name="location-outline" slot="start"></ion-icon>
+      <ion-label>Where to?</ion-label>
+      <ion-button fill="outline" size="small" slot="end">Now</ion-button>
+    </ion-item>
+  </ion-card>
+
+  <!-- Lista de destinos frecuentes -->
+  <ion-list class="destination-list">
+    <ion-item>
+      <ion-icon name="home-outline" slot="start" color="success"></ion-icon>
+      <ion-label>
+        <h2>Home</h2>
+        <p>3 Fusionopolis Link, Singapore, 138543</p>
+      </ion-label>
+      <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="pin-outline" slot="start" color="success"></ion-icon>
+      <ion-label>
+        <h2>75 Ayer Rajah Cres</h2>
+        <p>75 Ayer Rajah Crescent, Singapore, 139953</p>
+      </ion-label>
+      <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="location-outline" slot="start" color="success"></ion-icon>
+      <ion-label>
+        <h2>Main Entrance, Nexus  one-north</h2>
+        <p>3 Fusionopolis Link, Singapore, 138543</p>
+      </ion-label>
+      <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <!-- Opciones adicionales de viaje -->
+  <div class="additional-options">
+    <h3>More ways to travel</h3>
+    <div class="travel-options">
+      <ion-card>
+        <ion-icon name="bus-outline" color="success"></ion-icon>
+        <p>Travel to JB, Batam & beyond</p>
+      </ion-card>
+      <ion-card>
+        <ion-icon name="car-outline" color="success"></ion-icon>
+        <p>Hire a driver by the hour</p>
+      </ion-card>
+    </div>
+  </div>
+
+  <!-- Lugares guardados -->
+  <div class="saved-places">
+    <h3>Ride to Saved Places</h3>
+    <div class="place-icons">
+      <ion-button fill="clear">
+        <ion-icon name="home-outline" color="success"></ion-icon>
+        Home
+      </ion-button>
+      <ion-button fill="clear">
+        <ion-icon name="briefcase-outline" color="success"></ion-icon>
+        Work
+      </ion-button>
+      <ion-button fill="clear">
+        <ion-icon name="medkit-outline" color="success"></ion-icon>
+        Hospital
+      </ion-button>
+      <ion-button fill="clear">
+        <ion-icon name="add-outline" color="success"></ion-icon>
+        New
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
