@@ -4,14 +4,18 @@
   
   .profile-header {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
   }
   
   .edit-avatar-button {
-    margin-left: 16px;
+    margin-top: 8px; /* Añade espacio entre el avatar y el botón */
   }
-  
   .footer-item {
     color: var(--ion-color-primary);
   }
   
+
+  
+ 
