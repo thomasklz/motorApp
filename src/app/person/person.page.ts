@@ -6,6 +6,8 @@ import { UsuarioService } from '../service/usuario.service';
 import { IUser } from '../interface/IUser';
 import { addIcons } from 'ionicons';
 import { pencil } from 'ionicons/icons';
+import { PersonService } from '../service/person.service';
+
 @Component({
   selector: 'app-person',
   templateUrl: './person.page.html',
@@ -17,7 +19,7 @@ export class PersonPage implements OnInit {
   profile!:IUser;
   personid:any;
   editDatos:boolean=true;
-  constructor(private usuarioService:UsuarioService) { 
+  constructor(private usuarioService:UsuarioService, private personService:PersonService) { 
     this.personid = localStorage.getItem('id');
     addIcons({ pencil });
   }
@@ -39,7 +41,16 @@ export class PersonPage implements OnInit {
 
       }
     })
-
+  }
+    updatePerson(){
+      this.personService.updatePerson(1, "juan", "vera","23","porto",987).subscribe({
+        next:(data:IUser)=>{  
+          debugger
+        },
+        error:(error:any)=>{
+            debugger
+        }
+      })
   }
 
 
