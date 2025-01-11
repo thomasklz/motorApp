@@ -52,6 +52,7 @@ export class LoginPage implements OnInit {
       next: async (datos: any) => {
         localStorage.setItem('token',datos.token);
         localStorage.setItem('id',datos.dataUser.id);
+        localStorage.setItem('idp',datos.dataUser.idperson);
         localStorage.setItem('username',datos.dataUser.user);
         loading.dismiss();
         this.router.navigateByUrl('principal');

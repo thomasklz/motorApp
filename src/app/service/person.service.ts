@@ -8,7 +8,8 @@ export class PersonService {
 
   constructor(private http:HttpClient ) { }
 
-  updatePerson(id:number, name:string, lastname:string, ci:string, address:string, phone:number){
+  updatePerson(id:any, name:string, lastname:string, ci:string, address:string, phone:number){
+    debugger
     const data ={
       id:id,
       name:name,

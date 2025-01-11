@@ -14,15 +14,15 @@
       <ion-avatar slot="start">
         <img src="assets/avatar-placeholder.png" alt="Profile">
       </ion-avatar>
-      <ion-button (click)="updatePerson()" fill="clear" class="edit-avatar-button">Edit picture or avatar</ion-button>
+      <ion-button   fill="clear" class="edit-avatar-button">Edit picture or avatar</ion-button>
     </ion-item>
     <ion-item>
       <ion-label position="stacked">Name</ion-label>
-      <ion-input [disabled]="editDatos" value="{{profile.person.name}}"></ion-input>
+      <ion-input #nombre [disabled]="editDatos" value="{{profile.person.name}}"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="stacked">Lastname</ion-label>
-      <ion-input [disabled]="editDatos"  value="{{profile.person.lastname}}"></ion-input>
+      <ion-input #apellido [disabled]="editDatos"  value="{{profile.person.lastname}}"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -44,7 +44,7 @@
 
   <ion-list>
     <ion-item lines="none" class="footer-item">
-      <ion-label>Cambiar usuario</ion-label>
+      <ion-label (click)="updatePerson()">Cambiar usuario</ion-label>
     </ion-item>
     <ion-item lines="none" class="footer-item">
       <ion-label>Cambiar password</ion-label>

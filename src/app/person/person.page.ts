@@ -42,10 +42,15 @@ export class PersonPage implements OnInit {
       }
     })
   }
-    updatePerson(){
-      this.personService.updatePerson(1, "juan", "vera","23","porto",987).subscribe({
+
+
+updatePerson(){
+  debugger
+  const idp =localStorage.getItem('idp');
+      this.personService.updatePerson(idp, "tomas", "vera","23","porto",987).subscribe({
         next:(data:IUser)=>{  
           debugger
+          this.viewProfile();
         },
         error:(error:any)=>{
             debugger
