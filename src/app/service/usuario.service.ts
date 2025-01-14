@@ -21,4 +21,15 @@ export class UsuarioService {
     .set('Authorization', `Bearer ${localStorage.getItem('token')}`);
     return this.http.get<IUser>('http://localhost:3000/api/user/'+id, { headers: header });
   }
+  getAllUser(){
+    const header = new HttpHeaders()
+    .set('Authorization', `Bearer ${localStorage.getItem('token')}`);
+    return this.http.get('http://localhost:3000/api/user', { headers: header });
+  }
+  deleteUser(id:number){
+    const header = new HttpHeaders()
+    .set('Authorization', `Bearer ${localStorage.getItem('token')}`);
+    return this.http.delete('http://localhost:3000/api/user/'+id, { headers: header });
+  }
+
 }

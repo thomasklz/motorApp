@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { permissionGuard } from './guard/permission.guard';
 
 export const routes: Routes = [
   {
@@ -24,7 +25,8 @@ export const routes: Routes = [
   },
   {
     path: 'person',
-    loadComponent: () => import('./person/person.page').then( m => m.PersonPage)
+    loadComponent: () => import('./person/person.page').then( m => m.PersonPage),
+    canActivate: [permissionGuard],
   },
  
 ];

@@ -50,10 +50,12 @@ export class LoginPage implements OnInit {
     loading.present();
     this.usuarioService.login(email.value,password.value).subscribe({
       next: async (datos: any) => {
+        debugger
         localStorage.setItem('token',datos.token);
         localStorage.setItem('id',datos.dataUser.id);
         localStorage.setItem('idp',datos.dataUser.idperson);
         localStorage.setItem('username',datos.dataUser.user);
+        localStorage.setItem('idtu',datos.dataUser.typeusers_id);
         loading.dismiss();
         this.router.navigateByUrl('principal');
       },
