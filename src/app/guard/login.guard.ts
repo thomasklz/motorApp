@@ -4,13 +4,13 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from
 @Injectable({
   providedIn: 'root'
 })
-export class PermissionGuard implements CanActivate {
+export class LoginGuard implements CanActivate {
   constructor(private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     
-   const idtu = localStorage.getItem('idtu');
-    if (idtu !== "2") {
+   const token = localStorage.getItem('token');
+    if (token) {
       this.router.navigate(['/principal']);
       return false;
     }

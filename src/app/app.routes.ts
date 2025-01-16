@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
-import { permissionGuard } from './guard/permission.guard';
+import { PermissionGuard } from './guard/permission.guard';
+import { LoginGuard } from './guard/login.guard';
+
 
 export const routes: Routes = [
   {
@@ -13,11 +15,13 @@ export const routes: Routes = [
   },
   {
     path: 'welcome',
-    loadComponent: () => import('./welcome/welcome.page').then( m => m.WelcomePage)
+    loadComponent: () => import('./welcome/welcome.page').then( m => m.WelcomePage),
+    canActivate: [LoginGuard],
   },
   {
     path: 'login',
-    loadComponent: () => import('./login/login.page').then( m => m.LoginPage)
+    loadComponent: () => import('./login/login.page').then( m => m.LoginPage),
+    canActivate: [LoginGuard],
   },
   {
     path: 'principal',
@@ -26,7 +30,7 @@ export const routes: Routes = [
   {
     path: 'person',
     loadComponent: () => import('./person/person.page').then( m => m.PersonPage),
-    canActivate: [permissionGuard],
+    canActivate: [PermissionGuard],
   },
  
 ];
