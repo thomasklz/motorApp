@@ -21,7 +21,8 @@
       </ion-button>
     }
   </div>
-
+  <app-boton color="success" texto="Hola mundo"></app-boton>
+  <app-boton></app-boton>
   <!-- Barra de búsqueda -->
   <ion-card class="search-bar">
     <ion-item lines="none">
@@ -35,28 +36,10 @@
   <ion-list [inset]="true">
 
     @for (item of users; track $index) {
-     
-        <ion-item-sliding>
-          <ion-item [button]="true">
-            <ion-avatar aria-hidden="true" slot="start">
-              <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
-            </ion-avatar>
-            <ion-label>{{item.user}}</ion-label>
-       
-          </ion-item>
-          <ion-item-options slot="end">
-            <ion-item-option color="warning">
-              <ion-icon slot="icon-only" name="pin"></ion-icon>
-            </ion-item-option>
-            <ion-item-option color="tertiary">
-              <ion-icon slot="icon-only" name="share"></ion-icon>
-            </ion-item-option>
-            <ion-item-option color="danger" expandable="true" (click)="deleteUser(item.id)">
-              <ion-icon slot="icon-only" name="trash"></ion-icon>
-            </ion-item-option>
-          </ion-item-options>
-        </ion-item-sliding>
-     
+     <app-lista 
+     src="https://media.licdn.com/dms/image/v2/C4E03AQEo2D51RgskYw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1660173807723?e=2147483647&v=beta&t=tz4QAYTaWxd_3N1BnVAg4-wKZjfd3vqNSDwx4i7HsJg" 
+     texto="{{item.user}}"
+     (itemDelete)="deleteUser(item.id)" ></app-lista>
     }
    
 
@@ -94,9 +77,10 @@
         Hospital
       </ion-button>
       <ion-button fill="clear">
-        <ion-icon name="add-outline" color="success"></ion-icon>
+        <ion-icon name="add-outline" color="success" ></ion-icon>
         New
       </ion-button>
     </div>
   </div>
+  <app-lista></app-lista>
 </ion-content>

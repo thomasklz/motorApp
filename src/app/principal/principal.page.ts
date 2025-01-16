@@ -12,23 +12,23 @@ import { IonContent,
 } from '@ionic/angular/standalone';
 import { RouterLink } from '@angular/router';
 import { addIcons } from 'ionicons';
-import { pin, share, trash } from 'ionicons/icons';
+import { pin, share, trash, mapOutline, locationOutline, busOutline, carOutline, homeOutline, briefcaseOutline, medkitOutline, addOutline } from 'ionicons/icons';
+import { BotonComponent } from '../componentes/boton/boton.component';
+import { ListaComponent } from '../componentes/lista/lista.component';
 @Component({
   selector: 'app-principal',
   templateUrl: './principal.page.html',
   styleUrls: ['./principal.page.scss'],
   standalone: true,
-  imports: [
+  imports: [BotonComponent,
     IonButtons,RouterLink, IonBackButton, IonList, IonItem, IonLabel, IonCard, IonIcon, 
     IonButton, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,
-    IonAvatar,
+  
     IonContent,
+    ListaComponent,
     IonHeader,
     IonIcon,
-    IonItem,
-    IonItemOption,
-    IonItemOptions,
-    IonItemSliding,
+    IonItem, 
     IonLabel,
     IonList,
     IonTitle,
@@ -38,7 +38,8 @@ export class PrincipalPage implements OnInit {
   user:any;
   users:any;
   idtu:any;
-  constructor( private UsuarioService:UsuarioService) { }
+  constructor( private UsuarioService:UsuarioService) {
+      addIcons({mapOutline,locationOutline,pin,share,trash,busOutline,carOutline,homeOutline,briefcaseOutline,medkitOutline,addOutline}); }
 
   ngOnInit() {
    this.user = localStorage.getItem('username');
