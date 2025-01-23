@@ -12,8 +12,11 @@
   <ion-list class="profile-container">
     <ion-item lines="none" class="profile-header">
       <ion-avatar slot="start">
-        <img src="assets/avatar-placeholder.png" alt="Profile">
+        <img src="http://127.0.0.1:3000/imagenes/personas/{{profile.person.photo}}" alt="Profile">
       </ion-avatar>
+
+      <ion-input type="file" (change)="changeImage($event)" ></ion-input>
+
       <ion-button   fill="clear" class="edit-avatar-button">Edit picture or avatar</ion-button>
     </ion-item>
     <ion-item>

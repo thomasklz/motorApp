@@ -35,6 +35,7 @@ export class PersonPage implements OnInit {
   viewProfile(){
     this.usuarioService.getOneUser(this.personid).subscribe({
       next:(data:IUser)=>{  
+debugger
         this.profile=data.user;
       },
       error:(error:any)=>{
@@ -49,15 +50,24 @@ updatePerson(){
   const idp =localStorage.getItem('idp');
       this.personService.updatePerson(idp, "tomas", "vera","23","porto",987).subscribe({
         next:(data:IUser)=>{  
-          debugger
+
           this.viewProfile();
         },
         error:(error:any)=>{
-            debugger
+
         }
       })
   }
+  changeImage(event:any){
+    const file = event.target.files[0];
+    this.personService.updateImage(this.personid, file).subscribe({
+      next:(data:any)=>{  
+        this.viewProfile();
+        
+      },
+      error:(error:any)=>{
 
-
-
+      }
+    })
+  }
 }
